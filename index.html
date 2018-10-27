@@ -310,7 +310,7 @@
       <div v-for="(item, index) of title.subs" :key="index">
         <p class="line-height-1-6 p-1-6 mb-4">{{item.sub}}</p>
         <div class="mb-4 text-center" v-if="item.hasImg">
-          <img :src="item.img" alt="我是图片" />
+          <img :src="item.img" alt="我是图片" width="80%"/>
         </div>
       </div>
       <div class="divider mb-4"></div>
@@ -321,7 +321,7 @@
       <div class="bg-gray p-3">
         <p class="mb-4 line-height-1-4 p-1-4">{{details.content.title}}</p>
         <div v-for="(content, contentIndex) of details.content.contents">
-          <h3 class="mb-1">{{content.title}}</h3>
+          <h4 class="mb-1">{{content.title}}</h4>
           <p class="line-height-1-4 p-1-4" :class="subIndex === content.subs.length - 1 ? 'mb-4': ''" v-for="(sub, subIndex) of content.subs">{{sub}}</p>
         </div>
       </div>
@@ -339,17 +339,17 @@
           subs: [
             {
               sub: '点击“呼叫110”后，您可以直接拨打本地110。页面中提供了车辆信息以及您当前所在位置，以便您与警方沟通。（GPS信号弱时，位置可能存在偏移）',
-              img: '我是图',
+              img: '/img-1.png',
               hasImg: true
             },
             {
               sub: '所有信息也会以短信的形式直接发送到您的手机。（受运营商影响，短信可能存在延时）',
-              img: '我是图',
+              img: '/img-2.png',
               hasImg: true
             },
             {
               sub: '同时，若您已设置紧急联系人，滴滴会以短信和电话的方式告知您所有的紧急联系人。其中短信会包含您的行程信息与所在位置。（受运营商影响，短信可能存在延时）',
-              img: '我是图',
+              img: '/img-2.png',
               hasImg: true
             },
             {
