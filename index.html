@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>一键报警功能说明</title>
+  <style>
+    html,
+    body,
+    div,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding: 0;
+      margin: 0;
+    }
+
+    [v-cloak] {
+      display: none;
+    }
+
+    .bg-white {
+      background-color: #f8f8f9;
+    }
+
+    .bg-gray {
+      background-color: #eeeeee;
+    }
+
+    .bg-dark {
+      background-color: #191919;
+    }
+
+    .bg-primary {
+      background-color: #2d8cf0;
+    }
+
+    .bg-light-primary {
+      background-color: #5cadff;
+    }
+
+    .bg-dark-primary {
+      background-color: #2b85e4;
+    }
+
+    .text-dark {
+      color: #191919;
+    }
+
+    .text-white {
+      color: #f8f8f9;
+    }
+
+    .text-primary {
+      color: #2d8cf0;
+    }
+
+    .text-success {
+      color: #19be6b
+    }
+
+    .text-warning {
+      color: #ff9900;
+    }
+
+    .text-error {
+      color: #ed3f14;
+    }
+
+    .text-title {
+      color: #1c2438;
+    }
+
+    .text-sub {
+      color: #80848f;
+    }
+
+    .text-disabled {
+      color: #bbbec4;
+    }
+
+    .text-content {
+      color: #495060;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .bold {
+      font-size: bold;
+    }
+
+    .p-1-6 {
+      font-size: 16px;
+    }
+
+    .p-1-4 {
+      font-size: 14px;
+    }
+
+    .line-height-1-4 {
+      line-height: 1.4;
+    }
+
+    .line-height-1-6 {
+      line-height: 1.6;
+    }
+
+    .border {
+      border: 1px solid #dddee1;
+    }
+
+    .divider::after {
+      content: ' ';
+      display: block;
+      height: 1px;
+      background-color: #e9eaec;
+    }
+
+    .width-100vw {
+      width: 100vw;
+    }
+
+    .height-100vh {
+      height: 100vh;
+    }
+
+    .p-1 {
+      padding: 6px;
+    }
+
+    .p-2 {
+      padding: 12px;
+    }
+
+    .p-3 {
+      padding: 18px;
+    }
+
+    .p-4 {
+      padding: 24px;
+    }
+
+    .pt-1 {
+      padding-top: 6px;
+    }
+
+    .pt-2 {
+      padding-top: 12px
+    }
+
+    .pt-3 {
+      padding-top: 18px;
+    }
+
+    .pt-4 {
+      padding-top: 24px;
+    }
+
+    .pl-1 {
+      padding-left: 6px;
+    }
+
+    .pl-2 {
+      padding-left: 12px;
+    }
+
+    .pl-3 {
+      padding-left: 18px;
+    }
+
+    .pl-4 {
+      padding-left: 24px;
+    }
+
+    .pr-1 {
+      padding-right: 6px;
+    }
+
+    .pr-2 {
+      padding-right: 12px;
+    }
+
+    .pr-3 {
+      padding-right: 18px;
+    }
+
+    .pr-4 {
+      padding-right: 24px;
+    }
+
+    .pb-1 {
+      padding-bottom: 6px;
+    }
+
+    .pb-2 {
+      padding-bottom: 12px;
+    }
+
+    .pb-3 {
+      padding-bottom: 18px;
+    }
+
+    .pb-4 {
+      padding-bottom: 24px;
+    }
+
+    .m-1 {
+      margin: 6px;
+    }
+
+    .m-2 {
+      margin: 12px;
+    }
+
+    .m-3 {
+      margin: 18px;
+    }
+
+    .m-4 {
+      margin: 24px;
+    }
+
+    .mt-1 {
+      margin-top: 6px;
+    }
+
+    .mt-2 {
+      margin-top: 12px;
+    }
+
+    .mt-3 {
+      margin-top: 18px;
+    }
+
+    .mt-4 {
+      margin-top: 24px;
+    }
+
+    .ml-1 {
+      margin-left: 6px;
+    }
+
+    .ml-2 {
+      margin-left: 12px;
+    }
+
+    .ml-3 {
+      margin-left: 18px;
+    }
+
+    .ml-4 {
+      margin-left: 24px;
+    }
+
+    .mr-1 {
+      margin-right: 6px;
+    }
+
+    .mr-2 {
+      margin-right: 12px;
+    }
+
+    .mr-3 {
+      margin-right: 18px;
+    }
+
+    .mr-4 {
+      margin-right: 24px;
+    }
+
+    .mb-1 {
+      margin-bottom: 6px;
+    }
+
+    .mb-2 {
+      margin-bottom: 12px;
+    }
+
+    .mb-3 {
+      margin-bottom: 18px;
+    }
+
+    .mb-4 {
+      margin-bottom: 24px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main v-cloak class="pl-3 pr-3" style="padding-top: 68px; padding-bottom: 68px;" id="app">
+    <div v-if="hasTitle">
+      <h2 class="mb-4">{{title.title}}</h2>
+      <div v-for="(item, index) of title.subs" :key="index">
+        <p class="line-height-1-6 p-1-6 mb-4">{{item.sub}}</p>
+        <div class="mb-4 text-center" v-if="item.hasImg">
+          <img :src="item.img" alt="我是图片" />
+        </div>
+      </div>
+      <div class="divider mb-4"></div>
+    </div>
+    <div v-if="hasDetails">
+      <h2 class="mb-4">{{details.title}}</h2>
+      <p class="mb-4 line-height-1-6 p-1-6">{{details.sub}}<strong class="text-error">{{details.strong}}</strong></p>
+      <div class="bg-gray p-3">
+        <p class="mb-4 line-height-1-4 p-1-4">{{details.content.title}}</p>
+        <div v-for="(content, contentIndex) of details.content.contents">
+          <h3 class="mb-1">{{content.title}}</h3>
+          <p class="line-height-1-4 p-1-4" :class="subIndex === content.subs.length - 1 ? 'mb-4': ''" v-for="(sub, subIndex) of content.subs">{{sub}}</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+  <script>
+    var vm = new Vue({
+      // 选项
+      el: '#app',
+      data: {
+        title: {
+          title: '一键报警',
+          subs: [
+            {
+              sub: '点击“呼叫110”后，您可以直接拨打本地110。页面中提供了车辆信息以及您当前所在位置，以便您与警方沟通。（GPS信号弱时，位置可能存在偏移）',
+              img: '我是图',
+              hasImg: true
+            },
+            {
+              sub: '所有信息也会以短信的形式直接发送到您的手机。（受运营商影响，短信可能存在延时）',
+              img: '我是图',
+              hasImg: true
+            },
+            {
+              sub: '同时，若您已设置紧急联系人，滴滴会以短信和电话的方式告知您所有的紧急联系人。其中短信会包含您的行程信息与所在位置。（受运营商影响，短信可能存在延时）',
+              img: '我是图',
+              hasImg: true
+            },
+            {
+              sub: '若您在未登录状态使用一键报警功能，我们将无法与您或您的紧急联系人取得联系。',
+              img: '',
+              hasImg: false
+            }
+          ]
+        },
+        hasTitle: true,
+        details: {
+          title: '请不要恶意报警',
+          sub: '请不要恶意报警！若查实为恶意报警，除相关机关将依照《治安管理处罚法》给予行走处罚外，滴滴也将对您',
+          strong: '暂停服务1-7天',
+          content: {
+            title: '根据《治安管理处罚法》相关规定和公安机关接处警实际情况，恶意报警主要包括骚扰警情、谎报警情和谎报案情：',
+            contents: [
+              {
+                title: '一、骚扰警情',
+                subs: [
+                  '1.行为案例：无故拨打110报警电话，故意捣乱、寻衅取乐、侮辱接处警人员，占用110报警线路资源。',
+                  '2.处罚依据：《治安管理处罚法》第二十三条第（一）项：处警告或者二百元以下罚款；情节较重的，处五日以上十日以下拘留，可以并处五百元以下罚款。'
+                ]
+              },
+              {
+                title: '二、谎报警情',
+                subs: [
+                  '1.行为案例：人为编造、散播虚假的治安警情，或者明知的虚假的警情，仍拨打110等向公安机关报案。',
+                  '2.处罚依据：《治安管理处罚法》第二十五条第（一）项：处五日以上十日以下拘留，可以并处五百以下罚款；情节较轻的，处五日以下拘留或五百元以下罚款。'
+                ]
+              },
+              {
+                title: '三、谎报案情',
+                subs: [
+                  '1.行为案例：当事人故意向行政执法机关举报、投诉或者提供并不存在或者故意扭曲、夸大的违法事实，从而影响行政机关依法办案。',
+                  '2.处罚依据：《治安管理处罚法》第六十条第（二）项：处五日以上十日以下拘留，并处二百元以上五百元以下罚款。'
+                ]
+              }
+
+            ]
+          }
+        },
+        hasDetails: true
+      }
+    })
+  </script>
+</body>
+
+</html>
